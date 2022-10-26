@@ -1,8 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # lien vers le html
 def accueil_view(request):
-    return render(request, 'rivecol/accueil.html')
+    return HttpResponse('hello')
+    # return render(request, 'SitesAnimesQuizz/accueil.html')
 
-def contact_view(request):
-    return render(request, 'rivecol/contact.html')
+
