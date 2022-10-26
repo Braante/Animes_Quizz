@@ -1,0 +1,23 @@
+ce fichier sert de base à toutes nos pages
+
+utiliser un permet de créer un bloque de données qui sera instantié sur d'autre page html (voir script_accueil.html)
+<!doctype htmll>
+<html lang="fr">
+<head>
+    <!-- Required meta flags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivecol - Vente de rivets de couleur et produits du BTP</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+    {% block script%}   script js récupéré dans les autres fichiers html
+    {% endblock %}
+
+    
+</head>
+<body>
+    {% block contenu%}       contenu de la page récupéré dans les autres fichiers html
+    {% endblock %}
+</body>
