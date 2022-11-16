@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 CREATE TABLE anime(
-        idAnime      Varchar (50) NOT NULL ,
+        idAnime      int (3) NOT NULL ,
         libelleAnime Varchar (50) NOT NULL ,
         categorie    Varchar (50) NOT NULL
 	,CONSTRAINT anime_PK PRIMARY KEY (idAnime)
@@ -20,9 +20,9 @@ CREATE TABLE anime(
 #------------------------------------------------------------
 
 CREATE TABLE questions(
-        idQuestion      Varchar (50) NOT NULL ,
+        idQuestion      int (3) NOT NULL ,
         libelleQuestion Varchar (50) NOT NULL ,
-        idAnime         Varchar (50) NOT NULL
+        idAnime         int (3) NOT NULL
 	,CONSTRAINT questions_PK PRIMARY KEY (idQuestion)
 
 	,CONSTRAINT questions_anime_FK FOREIGN KEY (idAnime) REFERENCES anime(idAnime)
@@ -34,7 +34,7 @@ CREATE TABLE questions(
 #------------------------------------------------------------
 
 CREATE TABLE contenu_question(
-        idContenu      Varchar (50) NOT NULL ,
+        idContenu      int (3) NOT NULL ,
         libelleContenu Varchar (50) NOT NULL
 	,CONSTRAINT contenu_question_PK PRIMARY KEY (idContenu)
 )ENGINE=InnoDB;
@@ -45,7 +45,7 @@ CREATE TABLE contenu_question(
 #------------------------------------------------------------
 
 CREATE TABLE genre(
-        idGenre      Varchar (50) NOT NULL ,
+        idGenre      int (3) NOT NULL ,
         libelleGenre Varchar (50) NOT NULL
 	,CONSTRAINT genre_PK PRIMARY KEY (idGenre)
 )ENGINE=InnoDB;
@@ -56,8 +56,8 @@ CREATE TABLE genre(
 #------------------------------------------------------------
 
 CREATE TABLE reponse(
-        idQuestion Varchar (50) NOT NULL ,
-        idContenu  Varchar (50) NOT NULL ,
+        idQuestion int (3) NOT NULL ,
+        idContenu  int (3) NOT NULL ,
         correct    Bool NOT NULL
 	,CONSTRAINT reponse_PK PRIMARY KEY (idQuestion,idContenu)
 
@@ -71,11 +71,10 @@ CREATE TABLE reponse(
 #------------------------------------------------------------
 
 CREATE TABLE anime_genre(
-        idAnime Varchar (50) NOT NULL ,
-        idGenre Varchar (50) NOT NULL
+        idAnime int (3) NOT NULL ,
+        idGenre int (3) NOT NULL
 	,CONSTRAINT anime_genre_PK PRIMARY KEY (idAnime,idGenre)
 
 	,CONSTRAINT anime_genre_anime_FK FOREIGN KEY (idAnime) REFERENCES anime(idAnime)
 	,CONSTRAINT anime_genre_genre0_FK FOREIGN KEY (idGenre) REFERENCES genre(idGenre)
 )ENGINE=InnoDB;
-

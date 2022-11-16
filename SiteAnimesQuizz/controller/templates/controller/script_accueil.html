@@ -1,0 +1,47 @@
+{% extends 'animesquizz/index.html' %}
+<html lang="fr">
+<head>
+    
+    {% block script%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    
+    {{ js_json_categ_anime_genre|json_script:"js_json_categ_anime_genre"}}
+    <script>
+        
+        const recupJson = JSON.parse(document.getElementById('js_json_categ_anime_genre').textContent);
+        
+        window.onload = function() {
+            var categorie_animeSel = document.getElementById("categorie_anime");
+            var nom_animeSel = document.getElementById("nom_anime"); 
+            var genre_animeSel = document.getElementById("genre_anime");
+
+            for (var x in recupJson) {
+                // alert(json.length);
+                categorie_animeSel.options[categorie_animeSel.options.length] = new Option(x, x);
+            }
+               
+            categorie_animeSel.onchange = function() {
+                genre_animeSel.length = 1;
+                nom_animeSel.length = 1;
+                for (var c in recupJson[this.value]) {
+                    nom_animeSel.options[nom_animeSel.options.length] = new Option(c, c);
+                }
+            }
+
+            nom_animeSel.onchange = function() {
+                genre_animeSel.length = 1;
+                var n = recupJson[categorie_animeSel.value][this.value];
+                for (var i = 0; i < n.length; i++) {
+                    genre_animeSel.options[genre_animeSel.options.length] = new Option(n[i], n[i]);
+                }
+            }
+        }   
+    </script>
+   {% endblock %}
+</head>
+<body>
+
+    
+    
+</body>
+</html>

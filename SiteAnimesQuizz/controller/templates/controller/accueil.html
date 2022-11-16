@@ -1,0 +1,48 @@
+{% extends 'controller/script_accueil.html' %}
+
+<body> 
+    {% block contenu%}
+    
+    <form class ="form1" name="form1" id="form1" action="" method = "POST" style=" text-align: center;">
+        {% csrf_token %}
+
+        <select name="categorie_anime" id="categorie_anime">
+            <option value="">--Please choose an option--</option>
+        </select>
+        
+        <select name="nom_anime" id="nom_anime">
+            <option value="">--Please choose an option--</option>
+        </select>
+        <select name="genre_anime" id="genre_anime">
+            <option value="">--Please choose an option--</option>
+        </select>
+        <br>
+
+        <button type="submit" name="button"> Validez</button>
+    </form>
+
+    <br>
+    <h1>Bienvenue sur notre Site Animes Quizz.</h1>
+    <p>Ce site a été créé à l’initiative de trois étudiants de la région bordelaise
+    </p>
+    
+    <p>//// 
+        ////</p>
+    
+    <p>//////
+    </p>
+
+   <p>//////
+    </p>
+
+    <p>Nous vous souhaitons une agréable expérience sur notre site</p>
+
+    <p></p>
+    
+    <p>///
+        ////
+    </p>
+
+    
+    {% endblock %}
+</body>

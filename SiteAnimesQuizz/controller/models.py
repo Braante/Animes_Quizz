@@ -1,22 +1,23 @@
 from django.db import models
+from tkinter import Place
 
 # test étant la table
 class contenu_question(models.Model):
     idContenu = models.IntegerField(primary_key= True) # champ pk
-    libelleContenu = models.CharField(max_length = 50)
+    libelleContenu = models.CharField(max_length = 200)
     class Meta:
         db_table = "contenu_question" #nom de la table
 
 class questions(models.Model):
     idQuestion = models.IntegerField(primary_key= True) # champ pk
-    libelleQuestion = models.CharField(max_length = 50)
+    libelleQuestion = models.CharField(max_length = 500)
     idAnime = models.IntegerField()
     class Meta:
         db_table = "questions" #nom de la table
 
 class anime(models.Model):
     idAnime = models.IntegerField(primary_key= True) # champ pk
-    libelleAnime = models.CharField(max_length = 50)
+    libelleAnime = models.CharField(max_length = 200)
     categorie = models.CharField(max_length = 50)
     class Meta:
         db_table = "anime" #nom de la table
