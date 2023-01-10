@@ -1,10 +1,10 @@
-body {background-color: rgb(18, 11, 82);}
+body {background-color: #16193B;}
 
 header {display: block;}
 
-h1 {color: white; text-align: center;}
+h1 {color: #ADD5F7; text-align: center;}
 
-div {color: white;}
+div {color: #ADD5F7;}
 
 .header {
 	padding: 60px;
@@ -133,4 +133,18 @@ li a {
 
 .card {
 	background-color: blueviolet;
+}
+
+
+
+/* css spécifique à la page "game" */
+
+.title_name {
+	padding-top: 50px;
+	padding-bottom: 10%;
+}
+
+.question {
+	padding-left: 10%;
+	padding-bottom: 5%;
 }
