@@ -137,11 +137,11 @@ li a {
 
 
 
-/* css spécifique à la page "game" */
+/* css game.html */
 
 .title_name {
 	padding-top: 50px;
-	padding-bottom: 10%;
+	padding-bottom: 5%;
 }
 
 .question {
@@ -158,4 +158,10 @@ li a {
 	border-radius: 25% 10%;
 	text-align: center;
 	max-width: 25%;
+}
+
+/* css result.html */
+
+.ajust-row {
+	margin-top: 3%;
 }
